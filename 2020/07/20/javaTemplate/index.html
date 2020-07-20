@@ -104,7 +104,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2020-07-20</span>
-            <span class="time">14:36:41</span>
+            <span class="time">15:53:14</span>
           </span>
           
           <!--  Categories  -->
@@ -126,73 +126,17 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>1.在父类定义通用的模板方法，具体细节方法由子类各自实现<br>2.例如盖房子，都需要打地基、砌墙搭、装修等步骤，这些方法就可以在父类的模板方法统一实现。但是具体的细节会根据不同的房子不一样，如别墅和草房需要的砌的墙和装修的工作不一样。<br>3.<br>优点： 1、封装不变部分，扩展可变部分。 2、提取公共代码，便于维护。 3、行为由父类控制，子类实现。</p>
+          <p>1.在父类定义通用的模板方法，具体细节方法由子类各自实现<a id="more"></a><br>2.例如盖房子，都需要打地基、砌墙搭、装修等步骤，这些方法就可以在父类的模板方法统一实现。但是具体的细节会根据不同的房子不一样，如别墅和草房需要的砌的墙和装修的工作不一样。<br>3.<br>优点： 1、封装不变部分，扩展可变部分。 2、提取公共代码，便于维护。 3、行为由父类控制，子类实现。</p>
 <p>缺点：1、每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。父类每增加一个方法所有的子类都要跟着修改，维护量大。</p>
-<p>`4.以下是示例：</p>
-<p>`public abstract class BuildTemplate {</p>
-<pre><code>/**
- * 打地基
- */
-public abstract void layFoundation();
+<p>4.以下是示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 建筑基类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">`<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildTemplate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打地基</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">layFoundation</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 砌墙</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">masonryWall</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 装修</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">renovation</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 盖房子的模板方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.先打地基 2.再砌墙 3.最后在装修</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        layFoundation();</span><br><span class="line"></span><br><span class="line">        masonryWall();</span><br><span class="line"></span><br><span class="line">        renovation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>`</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 盖别墅</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">`<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildVilla</span> <span class="keyword">extends</span> <span class="title">BuildTemplate</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">layFoundation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"别墅打地基"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">masonryWall</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"别墅砌墙"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">renovation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"别墅装修"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;`</span><br></pre></td></tr></table></figure>
 
-/**
- * 砌墙
- */
-public abstract void masonryWall();
 
-/**
- * 装修
- */
-public abstract void renovation();
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 盖草房</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">```java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildThatchedCottage</span> <span class="keyword">extends</span> <span class="title">BuildTemplate</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">layFoundation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"草房打地基"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">masonryWall</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"草房砌墙"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">renovation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"草房装修"</span>);</span><br><span class="line">   </span><br><span class="line">``` &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-/**
- * 盖房子的模板方法
- */
-public final void build(){
-
-    /**
-     * 1.先打地基 2.再砌墙 3.最后在装修
-     */
-    layFoundation();
-
-    masonryWall();
-
-    renovation();
-}</code></pre><p>}<br>`<br>/**</p>
-<ul>
-<li><p>盖别墅</p>
-</li>
-<li><p>/<br>`public class BuildVilla extends BuildTemplate {<br>  @Override<br>  public void layFoundation() {</p>
-<pre><code>System.out.println(&quot;别墅打地基&quot;);</code></pre><p>  }</p>
-<p>  @Override<br>  public void masonryWall() {</p>
-<pre><code>System.out.println(&quot;别墅砌墙&quot;);</code></pre><p>  }</p>
-<p>  @Override<br>  public void renovation() {</p>
-<pre><code>System.out.println(&quot;别墅装修&quot;);</code></pre><p>  }<br>}`</p>
-</li>
-</ul>
-<p>/**</p>
-<ul>
-<li><p>盖草房</p>
-</li>
-<li><p>/<br>public class BuildThatchedCottage extends BuildTemplate{</p>
-<p>  @Override<br>  public void layFoundation() {</p>
-<pre><code>System.out.println(&quot;草房打地基&quot;);</code></pre><p>  }</p>
-<p>  @Override<br>  public void masonryWall() {</p>
-<pre><code>System.out.println(&quot;草房砌墙&quot;);</code></pre><p>  }</p>
-<p>  @Override<br>  public void renovation() {</p>
-<pre><code>System.out.println(&quot;草房装修&quot;);</code></pre><p>  }<br>}</p>
-</li>
-</ul>
-<p>public class Test {</p>
-<pre><code>public static void main(String[] args) {
-    BuildTemplate buildTemplate = new BuildVilla();
-    //现在我想盖一栋别墅 只要调用模板方法 build()就可
-    buildTemplate.build();
-    //想盖一栋草房也是一样
-    buildTemplate = new BuildThatchedCottage();
-    buildTemplate.build();
-}</code></pre><p>}</p>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        BuildTemplate buildTemplate = <span class="keyword">new</span> BuildVilla();</span><br><span class="line">        <span class="comment">//现在我想盖一栋别墅 只要调用模板方法 build()就可</span></span><br><span class="line">        buildTemplate.build();</span><br><span class="line">        <span class="comment">//想盖一栋草房也是一样</span></span><br><span class="line">        buildTemplate = <span class="keyword">new</span> BuildThatchedCottage();</span><br><span class="line">        buildTemplate.build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
       </div>
     </div>
