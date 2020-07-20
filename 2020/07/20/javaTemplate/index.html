@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="xuziboy">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="firstPage"/>
+  <meta property="og:title" content="设计模式之模板方法"/>
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="xuziboy"/>
   <meta property="og:type" content="article" />
@@ -47,7 +47,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">firstPage</p>
+          <p class="title">设计模式之模板方法</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -103,16 +103,96 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2020-07-18</span>
+            <span class="date">2020-07-20</span>
             <span class="time">14:36:41</span>
           </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+</span>
           
         </div>
         <!-- Tags -->
         
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/java/">#java</a>
+
+
+          </div>
+        
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <p>1.在父类定义通用的模板方法，具体细节方法由子类各自实现<br>2.例如盖房子，都需要打地基、砌墙搭、装修等步骤，这些方法就可以在父类的模板方法统一实现。但是具体的细节会根据不同的房子不一样，如别墅和草房需要的砌的墙和装修的工作不一样。<br>3.<br>优点： 1、封装不变部分，扩展可变部分。 2、提取公共代码，便于维护。 3、行为由父类控制，子类实现。</p>
+<p>缺点：1、每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。父类每增加一个方法所有的子类都要跟着修改，维护量大。</p>
+<p>`4.以下是示例：</p>
+<p>`public abstract class BuildTemplate {</p>
+<pre><code>/**
+ * 打地基
+ */
+public abstract void layFoundation();
+
+/**
+ * 砌墙
+ */
+public abstract void masonryWall();
+
+/**
+ * 装修
+ */
+public abstract void renovation();
+
+/**
+ * 盖房子的模板方法
+ */
+public final void build(){
+
+    /**
+     * 1.先打地基 2.再砌墙 3.最后在装修
+     */
+    layFoundation();
+
+    masonryWall();
+
+    renovation();
+}</code></pre><p>}<br>`<br>/**</p>
+<ul>
+<li><p>盖别墅</p>
+</li>
+<li><p>/<br>`public class BuildVilla extends BuildTemplate {<br>  @Override<br>  public void layFoundation() {</p>
+<pre><code>System.out.println(&quot;别墅打地基&quot;);</code></pre><p>  }</p>
+<p>  @Override<br>  public void masonryWall() {</p>
+<pre><code>System.out.println(&quot;别墅砌墙&quot;);</code></pre><p>  }</p>
+<p>  @Override<br>  public void renovation() {</p>
+<pre><code>System.out.println(&quot;别墅装修&quot;);</code></pre><p>  }<br>}`</p>
+</li>
+</ul>
+<p>/**</p>
+<ul>
+<li><p>盖草房</p>
+</li>
+<li><p>/<br>public class BuildThatchedCottage extends BuildTemplate{</p>
+<p>  @Override<br>  public void layFoundation() {</p>
+<pre><code>System.out.println(&quot;草房打地基&quot;);</code></pre><p>  }</p>
+<p>  @Override<br>  public void masonryWall() {</p>
+<pre><code>System.out.println(&quot;草房砌墙&quot;);</code></pre><p>  }</p>
+<p>  @Override<br>  public void renovation() {</p>
+<pre><code>System.out.println(&quot;草房装修&quot;);</code></pre><p>  }<br>}</p>
+</li>
+</ul>
+<p>public class Test {</p>
+<pre><code>public static void main(String[] args) {
+    BuildTemplate buildTemplate = new BuildVilla();
+    //现在我想盖一栋别墅 只要调用模板方法 build()就可
+    buildTemplate.build();
+    //想盖一栋草房也是一样
+    buildTemplate = new BuildThatchedCottage();
+    buildTemplate.build();
+}</code></pre><p>}</p>
+
         </div>
       </div>
     </div>
